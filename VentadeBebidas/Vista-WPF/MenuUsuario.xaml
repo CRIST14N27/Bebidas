@@ -1,0 +1,51 @@
+﻿<Window x:Class="VentadeBebidas.Vista_WPF.MenuUsuario"
+        xmlns="http://schemas.microsoft.com/winfx/2006/xaml/presentation"
+        xmlns:x="http://schemas.microsoft.com/winfx/2006/xaml"
+        xmlns:d="http://schemas.microsoft.com/expression/blend/2008"
+        xmlns:mc="http://schemas.openxmlformats.org/markup-compatibility/2006"
+        xmlns:local="clr-namespace:VentadeBebidas.Vista_WPF"
+        mc:Ignorable="d"
+        Title="MenuUsuario" Height="450" Width="800">
+    <Grid>
+        <Grid Background="#FFD6D6D6">
+            <Grid x:Name="panelHeader" VerticalAlignment="Top" Height="50" Background="#FF0F4E7A" MouseDown="PanelHeader_MouseDown">
+                <TextBlock Text="C# Ui Academy" HorizontalAlignment="Center" VerticalAlignment="Center" FontFamily="Century Gothic" FontSize="20" FontWeight="Bold" Foreground="White"/>
+            </Grid>
+            <Grid x:Name="sidePanel" Background="#FF0F4E7A" HorizontalAlignment="Left" Width="180">
+                <StackPanel>
+                    <Grid Height="150" Width="180">
+                        <Grid.Background>
+                            <ImageBrush ImageSource="/Icons/logo.png"/>
+                        </Grid.Background>
+                        <Button HorizontalAlignment="Right" Height="20" VerticalAlignment="Top" BorderBrush="Transparent" Click="Button_Click">
+                            <Button.Background>
+                                <ImageBrush/>
+                            </Button.Background>
+                            <Image Source="/icons/lista.png"/>
+                        </Button>
+                    </Grid>
+                    <ListView ScrollViewer.HorizontalScrollBarVisibility="Disabled" FontFamily="Century Gothic" FontSize="14" Foreground="White" BorderBrush="Transparent" Background="Transparent" FontWeight="Bold">
+                        <ListViewItem Height="30" Selected="ListViewItem_Selected">
+                            <StackPanel Orientation="Horizontal">
+                                <Image Source="/icons/desembalaje.png" Height="20" VerticalAlignment="Center"/>
+                                <TextBlock Margin="15 0 0 0" Text="Productos" VerticalAlignment="Center"/>
+                            </StackPanel>
+                        </ListViewItem>
+                        <ListViewItem Height="30">
+                            <StackPanel Orientation="Horizontal">
+                                <Image Source="/icons/carro-de-la-compra.png" Height="20" VerticalAlignment="Center"/>
+                                <TextBlock Margin="15 0 0 0" Text="Carrito Compras" VerticalAlignment="Center"/>
+                            </StackPanel>
+                        </ListViewItem>
+                        <ListViewItem Height="30">
+                            <StackPanel Orientation="Horizontal">
+                                <Image Source="/icons/salida.png" Height="20" VerticalAlignment="Center"/>
+                                <TextBlock Margin="15 0 0 0" Text="Cerrar sesion" VerticalAlignment="Center"/>
+                            </StackPanel>
+                        </ListViewItem>
+                    </ListView>
+                </StackPanel>
+            </Grid>
+        </Grid>
+    </Grid>
+</Window>

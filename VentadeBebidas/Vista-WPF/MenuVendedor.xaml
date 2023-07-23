@@ -1,0 +1,33 @@
+﻿<Window x:Class="VentadeBebidas.Vista_WPF.MenuVendedor"
+        xmlns="http://schemas.microsoft.com/winfx/2006/xaml/presentation"
+        xmlns:x="http://schemas.microsoft.com/winfx/2006/xaml"
+        xmlns:d="http://schemas.microsoft.com/expression/blend/2008"
+        xmlns:mc="http://schemas.openxmlformats.org/markup-compatibility/2006"
+        xmlns:local="clr-namespace:VentadeBebidas.Vista_WPF"
+        mc:Ignorable="d"
+        Title="MenuVendedor" Height="450" Width="800">
+    <Grid>
+        <!-- Barra de menú superior -->
+        <Grid>
+            <Grid.ColumnDefinitions>
+                <ColumnDefinition Width="*"/>
+                <ColumnDefinition Width="Auto"/>
+            </Grid.ColumnDefinitions>
+
+            <ToggleButton x:Name="menuToggleButton" Content="☰" FontSize="20" Grid.Column="1" HorizontalAlignment="Right" VerticalAlignment="Top" Margin="10"/>
+        </Grid>
+
+        <!-- Contenido del menú desplegable -->
+        <StackPanel x:Name="menuItemsPanel" Orientation="Vertical" HorizontalAlignment="Right" VerticalAlignment="Top" Margin="10,40,0,0" Visibility="Collapsed">
+            <Button Content="Productos" Margin="5"/>
+            <Button Content="Carrito de Compras" Margin="5"/>
+            <Button Content="Cerrar Sesión" Margin="5"/>
+        </StackPanel>
+
+        <!-- Contenido principal del menú de bebidas -->
+        <Grid Margin="20">
+            <!-- Aquí puedes agregar el contenido del menú de bebidas -->
+            <TextBlock Text="Bienvenido al Menú de Bebidas" FontSize="30" FontWeight="Bold" HorizontalAlignment="Center" VerticalAlignment="Center"/>
+        </Grid>
+    </Grid>
+</Window>
