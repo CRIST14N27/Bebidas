@@ -1,0 +1,51 @@
+﻿<Window x:Class="VentadeBebidas.Vista_WPF.VentanaRegistro"
+        xmlns="http://schemas.microsoft.com/winfx/2006/xaml/presentation"
+        xmlns:x="http://schemas.microsoft.com/winfx/2006/xaml"
+        xmlns:d="http://schemas.microsoft.com/expression/blend/2008"
+        xmlns:mc="http://schemas.openxmlformats.org/markup-compatibility/2006"
+        xmlns:local="clr-namespace:VentadeBebidas.Vista_WPF"
+        mc:Ignorable="d"
+        Title="VentanaRegistro" Height="450" Width="800">
+    <Grid>
+        <Grid.RowDefinitions>
+            <RowDefinition Height="Auto"/>
+            <RowDefinition Height="*"/>
+        </Grid.RowDefinitions>
+
+        <!-- ComboBox para seleccionar la clase -->
+        <ComboBox x:Name="ClassSelector" Grid.Row="0" HorizontalAlignment="Left" VerticalAlignment="Center" Width="200" Margin="10" SelectionChanged="ClassSelector_SelectionChanged">
+            <ComboBoxItem Content="Producto"/>
+            <ComboBoxItem Content="Vendedor"/>
+            <ComboBoxItem Content="Usuario"/>
+            <ComboBoxItem Content="Admin"/>
+        </ComboBox>
+
+        <!-- DataGrid para mostrar los registros de la clase seleccionada -->
+        <DataGrid x:Name="DataGrid" Grid.Row="1" AutoGenerateColumns="False" CanUserAddRows="False" IsReadOnly="True" ColumnWidth="*" IsSynchronizedWithCurrentItem="True" Margin="10">
+            <!-- Columnas del DataGrid (ajusta las propiedades de Binding a tus clases) -->
+            <DataGridTextColumn Header="Id" Binding="{Binding Id}" />
+            <DataGridTextColumn Header="Nombre" Binding="{Binding Nombre}" />
+            <!-- Otras columnas para los demás atributos -->
+
+            <!-- Columnas para los botones "Editar" y "Eliminar" -->
+            <DataGridTemplateColumn Header="Editar">
+                <DataGridTemplateColumn.CellTemplate>
+                    <DataTemplate>
+                        <Button Content="Editar" Click="EditItem" />
+                    </DataTemplate>
+                </DataGridTemplateColumn.CellTemplate>
+            </DataGridTemplateColumn>
+
+            <DataGridTemplateColumn Header="Eliminar">
+                <DataGridTemplateColumn.CellTemplate>
+                    <DataTemplate>
+                        <Button Content="Eliminar" Click="DeleteItem" />
+                    </DataTemplate>
+                </DataGridTemplateColumn.CellTemplate>
+            </DataGridTemplateColumn>
+        </DataGrid>
+
+        <!-- Botón "Guardar" -->
+        <Button x:Name="BtnGuardar" Grid.Row="2" Content="Guardar" HorizontalAlignment="Center" VerticalAlignment="Center" Width="100" Height="30" Click="BtnGuardar_Click" />
+    </Grid>
+</Window>
